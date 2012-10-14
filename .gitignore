@@ -1,0 +1,17 @@
+.#*
+*~
+*#
+*.log
+.DS_Store
+*.swp
+*.pid
+.classpath
+.project
+.settings
+bin
+build
+output
+lib/downloaded
+*.ser
+target
+*.scc
