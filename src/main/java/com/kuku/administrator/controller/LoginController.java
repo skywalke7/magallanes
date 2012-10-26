@@ -19,5 +19,13 @@ public class LoginController {
 		return "login";
 		
 	}
-
+	
+	@RequestMapping(value="/",method= RequestMethod.POST)
+	public String showLogin(){
+		
+		System.out.println("POR METODO POST");
+		return "forward:j_spring_security_check";
+		
+	}
+	
 }

@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html lang="en">
 <head>
 	<meta charset="utf-8" />
@@ -172,13 +177,14 @@
 	<body id="home">
 		<div class="rain">
 			<div class="border start">
-				<form>
+				<form:form id="login" modelAttribute="loginForm"  method="post" autocomplete="off">
 					<label for="email">Email</label>
-					<input name="email" type="text" placeholder="Email"/>
+					<form:input id="username" path="j_username"  placeholder="Username" autofocus="true" required="true"/>
 					<label for="pass">Password</label>
-					<input name="pass" type="password" placeholder="Password"/>
+					<form:password   path="j_password"  id="password" placeholder="Password" required="true"/>
                                         <input type="submit" value="LOG IN"/>
-				</form>
+                                        
+				</form:form>
 			</div>
 		</div>
 	</body>
