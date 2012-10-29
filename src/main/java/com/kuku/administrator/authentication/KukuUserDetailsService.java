@@ -11,7 +11,10 @@ public class KukuUserDetailsService implements UserDetailsService{
 			throws UsernameNotFoundException, DataAccessException {
 		
 		System.out.println("NOMBRE DE USUARIO --> " + username);
-		// TODO Auto-generated method stub
+		
+		
+		
+		
 		return null;
 	}
 

@@ -15,6 +15,7 @@
           
           <bean id="daoAuthenticationProvider" class="com.kuku.administrator.authentication.KukuDaoAuthenticationProvider">
           	<property name="userDetailsService" ref="kukuUserDetailsService"/>
+       		<property name="passwordEncoder" ref="md5"/>        
           </bean>
           
 </beans>

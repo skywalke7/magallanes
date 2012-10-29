@@ -12,6 +12,9 @@ public class KukuDaoAuthenticationProvider extends DaoAuthenticationProvider {
 			UsernamePasswordAuthenticationToken authentication)
 			throws AuthenticationException {
 		// TODO Auto-generated method stub
+		
+		System.out.println("POR AQUI PASAAA --> " + userDetails );
+		
 		super.additionalAuthenticationChecks(userDetails, authentication);
 	}
 

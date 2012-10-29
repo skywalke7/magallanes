@@ -10,6 +10,16 @@ import com.kuku.administrator.form.LoginForm;
 @Controller
 public class LoginController {
 	
+	@RequestMapping(value ="/login",method= RequestMethod.GET)
+	public String authenticationFailed(Model model){
+		
+		model.addAttribute("loginForm", new LoginForm());
+		System.out.println("AQUI ENTRA SI LA AUTENTICACION ES FALLIDA");
+		
+		return "login";
+		
+	}
+	
 	@RequestMapping(value="/",method= RequestMethod.GET)
 	public String showLogin(Model model){
 		
@@ -21,7 +31,7 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/",method= RequestMethod.POST)
-	public String showLogin(){
+	public String validateLogin(){
 		
 		System.out.println("POR METODO POST");
 		return "forward:j_spring_security_check";
