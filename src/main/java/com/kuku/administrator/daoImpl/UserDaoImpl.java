@@ -9,12 +9,11 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 
 	public User findByUserName(String username) {
 		
-		User user = (User) getSession().createQuery("from user");
-		
+		System.out.println("ADENTRO DEL DAO?? =)");
+		User user = (User) getHibernateTemplate().find("FROM User WHERE USERNAME = " + username);
 		System.out.println("USUARIO DE LA BASE --> " + user);
 		
-		
-		return null;
+		return user;
 	}
 
 }

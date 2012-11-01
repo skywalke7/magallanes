@@ -18,4 +18,8 @@
        		<property name="passwordEncoder" ref="md5"/>        
           </bean>
           
+          <bean id="md5"
+          	class="org.springframework.security.authentication.encoding.Md5PasswordEncoder">
+    	  </bean>
+          
 </beans>
