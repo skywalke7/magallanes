@@ -21,5 +21,11 @@
           <bean id="md5"
           	class="org.springframework.security.authentication.encoding.Md5PasswordEncoder">
     	  </bean>
+    	  
+    	  <!-- injections -->
+		  
+		  <bean id="userDao" class="com.kuku.administrator.daoImpl.UserDaoImpl">
+		  	<property name="hibernateTemplate" ref="hibernateTemplate"/>
+		  </bean>
           
 </beans>

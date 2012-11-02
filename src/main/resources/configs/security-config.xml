@@ -6,14 +6,14 @@
            http://www.springframework.org/schema/security
            http://www.springframework.org/schema/security/spring-security-3.0.3.xsd">
     
-    <http auto-config="true">
+    <http auto-config="true" use-expressions="true">
     	<form-login always-use-default-target="true"
     	authentication-success-handler-ref=""
     	authentication-failure-handler-ref=""
     	default-target-url="/login"
     	login-page="/login"
     	/>
-		<intercept-url pattern="/welcome*" access="ROLE_USER" />
+		<intercept-url pattern="/login" access="permitAll" />
 	</http>
  
 	<authentication-manager>

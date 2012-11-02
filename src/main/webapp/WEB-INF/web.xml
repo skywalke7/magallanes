@@ -28,11 +28,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:/configs/root-context.xml</param-value>
   </context-param>
-  <context-param>
-  	<param-name>contextConfigLocation2</param-name>
-  	<param-value>classpath:/configs/applicationContext.xml</param-value>
-  </context-param>
-  
+    
   <!-- Is used for startup the spring application -->
   
   <listener>

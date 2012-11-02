@@ -2,14 +2,16 @@
   xmlns:context="http://www.springframework.org/schema/context"
   xmlns:security="http://www.springframework.org/schema/security"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:p="http://www.springframework.org/schema/p" xmlns:tx="http://www.springframework.org/schema/tx"
   xsi:schemaLocation="http://www.springframework.org/schema/beans
           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
           http://www.springframework.org/schema/security
           http://www.springframework.org/schema/security/spring-security-3.0.3.xsd
           http://www.springframework.org/schema/context 
-          http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+          http://www.springframework.org/schema/context/spring-context-3.0.xsd
+          http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
           
+          <tx:annotation-driven/>
           <!-- file properties -->
           
           <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -58,11 +60,5 @@
           <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager" > 
 			<property name="sessionFactory" ref="sessionFactory"/> 
 		  </bean>
-		  
-		  <!-- injections -->
-		  
-		  <bean id="userDao" class="com.kuku.administrator.daoImpl.UserDaoImpl">
-		  	<property name="hibernateTemplate" ref="hibernateTemplate"/>
-		  </bean>
-          
+		            
  </beans>
