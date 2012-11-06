@@ -17,9 +17,10 @@ public class KukuUserDetailsService implements UserDetailsService{
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException, DataAccessException {
 		
-		System.out.println("ANTES DE LA CONSULTA");
-		this.userDao.findByUserName(username);
-		System.out.println("NOMBRE DE USUARIO --> " + username);	
+		User user = this.userDao.findByUserName(username);
+		
+		if(user == null)
+			return null;
 		
 		return null;
 	}

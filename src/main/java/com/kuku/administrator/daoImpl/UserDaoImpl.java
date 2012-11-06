@@ -11,8 +11,11 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 
 	public User findByUserName(String username) {
 		
-		System.out.println("ADENTRO DEL DAO?? =)");
-		List<User> user = getHibernateTemplate().find("FROM User WHERE USERNAME = " + username);
+		String query = "FROM User u WHERE u.userName = ?";
+		
+		System.out.println(getHibernateTemplate());
+		
+		List<User> user = getHibernateTemplate().find(query,username);
 		
 		if(user!= null && user.size()>0)
 			return user.get(0);

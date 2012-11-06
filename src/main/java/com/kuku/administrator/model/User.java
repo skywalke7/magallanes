@@ -1,36 +1,46 @@
 package com.kuku.administrator.model;
 
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "User")
-public class User {
+@Table(name = "USERS")
+public class User implements Serializable{
 	
 	@Id
-	@Column(name="USER_ID")
-	@GeneratedValue
-	private int idUser;
 	@Column(name="USERNAME")
 	private String userName;
-	@Column(name="USER_PASS")
+	@Column(name="PASSWORD")
 	private String password;
-	@Column(name="EMAIL")
-	private String email;
-	@Column(name="ADDRESS")
-	private String address;
-	@Column(name="CELL_PHONE")
-	private String cellPhone;
+	@Column(name="ENABLED")
+	private boolean enabled;
+	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+    @JoinColumn(name="USERNAME")
+	private Set<Authority> authority = new HashSet<Authority>();
 	
-		
-	public int getIdUser() {
-		return idUser;
+	
+	public Set<Authority> getAuthority() {
+		return authority;
 	}
-	public void setIdUser(int idUser) {
-		this.idUser = idUser;
+	public void setAuthority(Set<Authority> authority) {
+		this.authority = authority;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 	public String getUserName() {
 		return userName;
@@ -44,25 +54,5 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
-	public String getCellPhone() {
-		return cellPhone;
-	}
-	public void setCellPhone(String cellPhone) {
-		this.cellPhone = cellPhone;
-	}
-	
-	
-
+		
 }

@@ -94,12 +94,12 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
   		</dependency>
-  		<!-- Fix -->
+  		<!-- Fix 
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
-		</dependency>
+		</dependency> -->
   	<!-- End dependencies Servlet --> 
   	<!-- Dependencies Hibernate -->
   		<dependency>
