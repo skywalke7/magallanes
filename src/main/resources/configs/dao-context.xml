@@ -11,21 +11,40 @@
           
           <bean id="kukuUserDetailsService"
           	class="com.kuku.administrator.authentication.KukuUserDetailsService">
+          	
     	  </bean>
           
-          <bean id="daoAuthenticationProvider" class="com.kuku.administrator.authentication.KukuDaoAuthenticationProvider">
+          <!-- <bean id="daoAuthenticationProvider" class="com.kuku.administrator.authentication.KukuDaoAuthenticationProvider">
           	<property name="userDetailsService" ref="kukuUserDetailsService"/>
-       		<property name="passwordEncoder" ref="md5"/>        
-          </bean>
+       		<property name="passwordEncoder" ref="md5"/>
+          </bean> -->
+          
+          <bean id="daoAuthenticationProvider"
+ 			class="org.springframework.security.authentication.dao.DaoAuthenticationProvider">
+  				<property name="userDetailsService" ref="kukuUserDetailsService"/>
+  				<property name="passwordEncoder" ref="md5"/>
+		  </bean>
           
           <bean id="md5"
           	class="org.springframework.security.authentication.encoding.Md5PasswordEncoder">
     	  </bean>
     	  
+    	  <bean id="authenticationManager"
+        	class="org.springframework.security.authentication.ProviderManager">
+        		<property name="providers">
+            		<list>
+                		<ref local="daoAuthenticationProvider" />
+            		</list>
+        		</property>
+    	  </bean>
+    	  
+    	  
     	  <!-- injections -->
 		  
 		  <bean id="userDao" class="com.kuku.administrator.daoImpl.UserDaoImpl">
 		  	<property name="hibernateTemplate" ref="hibernateTemplate"/>
+		  </bean>
+		  <bean id="userDetails" class="com.kuku.administrator.authentication.KukuUserDetailsImpl">
 		  </bean>
           
 </beans>

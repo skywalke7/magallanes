@@ -1,7 +1,11 @@
 package com.kuku.administrator.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -31,7 +35,10 @@ public class LoginController {
 	}
 	
 	@RequestMapping(value="/",method= RequestMethod.POST)
-	public String validateLogin(){
+	public String validateLogin(@Valid LoginForm loginForm,BindingResult result, HttpServletRequest request) {
+        if (result.hasErrors()) {
+            return "login";
+        }
 		
 		System.out.println("POR METODO POST");
 		return "forward:j_spring_security_check";
