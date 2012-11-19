@@ -3,7 +3,11 @@ package com.kuku.administrator.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -21,11 +25,27 @@ public class LoginController {
 	
 	@Autowired
 	UserService userService;
+
+	protected final Log logger = LogFactory.getLog(getClass());
+	
+	@RequestMapping(value ="/login",method= RequestMethod.GET)
+	public String authenticationFailed(Model model){
+		
+		model.addAttribute("loginForm", new LoginForm());
+		
+		logger.error("Form reloaded because a failed authentication");
+		
+		return "login";
+		
+	}
+
 	
 	@RequestMapping(value="/",method= RequestMethod.GET)
 	public String showLogin(Model model){
 		
-		model.addAttribute("loginForm",new LoginForm());
+		model.addAttribute("loginForm", new LoginForm());
+		
+		logger.info("Login form getting loaded");
 		
 		return "login";
 		
@@ -34,12 +54,13 @@ public class LoginController {
 	@RequestMapping(value="/",method= RequestMethod.POST)
 	public String validateLogin(@Valid LoginForm loginForm,BindingResult result, HttpServletRequest request) {
         
-		System.out.println("RESULT --> " + result);
-		
 		if (result.hasErrors()) {
             return "login";
         }
 		
+
+		logger.info("Submiting info for validation against the database");
+
 		return "forward:j_spring_security_check";
 		
 	}

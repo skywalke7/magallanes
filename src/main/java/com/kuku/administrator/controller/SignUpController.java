@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.kuku.administrator.form.SignUpForm;
+
 
 @Controller
 public class SignUpController {
@@ -25,8 +27,24 @@ public class SignUpController {
 		
 		logger.info("Returning SignUp view");
 		
-		return new ModelAndView("signup");
+		ModelAndView modelAndView = new ModelAndView("signup");
+		modelAndView.addObject("signUpForm", new SignUpForm());
+		
+		return modelAndView;
 		
 	}
-
+	
+	@RequestMapping(value = "/signup", method = RequestMethod.POST)
+	public ModelAndView getValues(SignUpForm form) {
+		
+		logger.info("The value of the first name field is " + form.getFirstName());
+		logger.info("The value of the last name field is " + form.getLastName());
+		logger.info("The value of the email field is " + form.getEmail());
+		
+		//Fix me Implement service ValidateUsuario
+		
+		return new ModelAndView("registrationcompleted");
+		
+	}
+	
 }
