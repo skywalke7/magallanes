@@ -7,7 +7,6 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -22,48 +21,64 @@ import com.kuku.administrator.services.UserService;
 
 @Controller
 public class LoginController {
+<<<<<<< HEAD
 	
 	@Autowired
 	UserService userService;
+=======
+>>>>>>> Warnings supressed and all source code formatted
 
 	protected final Log logger = LogFactory.getLog(getClass());
-	
-	@RequestMapping(value ="/login",method= RequestMethod.GET)
-	public String authenticationFailed(Model model){
-		
+
+	@RequestMapping(value = "/login", method = RequestMethod.GET)
+	public String authenticationFailed(Model model) {
+
 		model.addAttribute("loginForm", new LoginForm());
-		
+
 		logger.error("Form reloaded because a failed authentication");
-		
+
 		return "login";
-		
+
 	}
 
+<<<<<<< HEAD
 	
 	@RequestMapping(value="/",method= RequestMethod.GET)
 	public String showLogin(Model model){
 		
+=======
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String showLogin(Model model) {
+
+>>>>>>> Warnings supressed and all source code formatted
 		model.addAttribute("loginForm", new LoginForm());
-		
+
 		logger.info("Login form getting loaded");
-		
+
 		return "login";
-		
+
 	}
-	
-	@RequestMapping(value="/",method= RequestMethod.POST)
-	public String validateLogin(@Valid LoginForm loginForm,BindingResult result, HttpServletRequest request) {
-        
+
+	@RequestMapping(value = "/", method = RequestMethod.POST)
+	public String validateLogin(@Valid LoginForm loginForm,
+			BindingResult result, HttpServletRequest request) {
+
 		if (result.hasErrors()) {
+<<<<<<< HEAD
             return "login";
         }
 		
+=======
+			return "login";
+		}
+>>>>>>> Warnings supressed and all source code formatted
 
 		logger.info("Submiting info for validation against the database");
 
 		return "forward:j_spring_security_check";
-		
+
 	}
+<<<<<<< HEAD
 	
 	@RequestMapping(value="/home",method= RequestMethod.GET)
 	public String showHome(){
@@ -94,4 +109,7 @@ public class LoginController {
 		
 	}
 		
+=======
+
+>>>>>>> Warnings supressed and all source code formatted
 }

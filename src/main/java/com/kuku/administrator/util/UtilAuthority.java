@@ -7,23 +7,20 @@ import java.util.Set;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.GrantedAuthorityImpl;
 
-
 import com.kuku.administrator.model.Authority;
 import com.kuku.administrator.model.User;
 
 public class UtilAuthority {
-	
-	
-	public static List<GrantedAuthority> getAuthorities(User user){
-		
+
+	public static List<GrantedAuthority> getAuthorities(User user) {
+
 		List<GrantedAuthority> listAuthorities = new ArrayList<GrantedAuthority>();
 		Set<Authority> authorities = user.getAuthority();
-		
-		for(Authority ua : authorities)
+
+		for (Authority ua : authorities)
 			listAuthorities.add(new GrantedAuthorityImpl(ua.getAuthority()));
-		
+
 		return listAuthorities;
 	}
-	
-	
+
 }

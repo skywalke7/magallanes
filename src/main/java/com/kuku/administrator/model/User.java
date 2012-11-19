@@ -8,7 +8,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
@@ -19,18 +18,21 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "USERS")
-public class User implements Serializable{
-	
+public class User implements Serializable {
+
+	private static final long serialVersionUID = -6992093194763298567L;
+
 	@Id
-	@Column(name="USERNAME")
+	@Column(name = "USERNAME")
 	private String userName;
-	@Column(name="PASSWORD")
+	@Column(name = "PASSWORD")
 	private String password;
-	@Column(name="ENABLED")
+	@Column(name = "ENABLED")
 	private boolean enabled;
-	@OneToMany(cascade=CascadeType.ALL, fetch=FetchType.EAGER)
-    @JoinColumn(name="USERNAME")
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "USERNAME")
 	private Set<Authority> authority = new HashSet<Authority>();
+<<<<<<< HEAD
 	@OneToOne
 	@JoinColumn(name="USERNAME")
 	private UserInfo userInfo;
@@ -42,29 +44,39 @@ public class User implements Serializable{
 	public void setUserInfo(UserInfo userInfo) {
 		this.userInfo = userInfo;
 	}
+=======
+
+>>>>>>> Warnings supressed and all source code formatted
 	public Set<Authority> getAuthority() {
 		return authority;
 	}
+
 	public void setAuthority(Set<Authority> authority) {
 		this.authority = authority;
 	}
+
 	public boolean isEnabled() {
 		return enabled;
 	}
+
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
+
 	public String getUserName() {
 		return userName;
 	}
+
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
+
 	public String getPassword() {
 		return password;
 	}
+
 	public void setPassword(String password) {
 		this.password = password;
 	}
-		
+
 }

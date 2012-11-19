@@ -4,11 +4,10 @@
 
 <tiles-definitions>
 
-	<definition name="publicTemplate"
-                template="/WEB-INF/pages/Template.jsp">
-    </definition>
+	<definition name="publicTemplate" template="/WEB-INF/pages/Template.jsp">
+	</definition>
 
 	<definition name="loginnnn" extends="publicTemplate">
-      <put-attribute name="content" value="/WEB-INF/pages/login.jsp" />      
-  	</definition>
+		<put-attribute name="content" value="/WEB-INF/pages/login.jsp" />
+	</definition>
 </tiles-definitions>

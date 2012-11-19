@@ -15,36 +15,36 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.kuku.administrator.form.SignUpForm;
 
-
 @Controller
 public class SignUpController {
-	
+
 	protected final Log logger = LogFactory.getLog(getClass());
-	
+
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
-	public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-		
+	public ModelAndView handleRequest(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+
 		logger.info("Returning SignUp view");
-		
+
 		ModelAndView modelAndView = new ModelAndView("signup");
 		modelAndView.addObject("signUpForm", new SignUpForm());
-		
+
 		return modelAndView;
-		
+
 	}
-	
+
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
 	public ModelAndView getValues(SignUpForm form) {
-		
-		logger.info("The value of the first name field is " + form.getFirstName());
+
+		logger.info("The value of the first name field is "
+				+ form.getFirstName());
 		logger.info("The value of the last name field is " + form.getLastName());
 		logger.info("The value of the email field is " + form.getEmail());
-		
-		//Fix me Implement service ValidateUsuario
-		
+
+		// Fix me Implement service ValidateUsuario
+
 		return new ModelAndView("registrationcompleted");
-		
+
 	}
-	
+
 }

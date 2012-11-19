@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 public class SignUpForm implements Serializable {
 	
+	private static final long serialVersionUID = -4553584364937266560L;
+
 	private String firstName;
 
 	private String lastName;
