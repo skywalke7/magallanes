@@ -25,7 +25,7 @@ public class SignUpController {
 		
 		logger.info("Returning SignUp view");
 		
-		return new ModelAndView("signup.jsp");
+		return new ModelAndView("signup");
 		
 	}
 

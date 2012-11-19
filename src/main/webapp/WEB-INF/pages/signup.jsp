@@ -31,25 +31,6 @@
 
 	</form>
 
-
-
-
-	<!-- 
-<form:form id="signup" modelAttribute="signUpForm" method="post">
-
-<label for="firstName">First Name</label>
-<form:input type="text" path="firstName" id="firstName" autofocus="true" required="true"/>
-<label for="lastName">Last Name</label>
-<form:input type="text" path="lastName" id="lastName"/>
-<label for="email">Email</label>
-<form:input type="text" path="email" id="email"/>
-<label for="password">Password</label>
-<form:password path="password" id="password"/>
-
-<input type="submit" value="Sign up">
-
-</form:form>
--->
 </body>
 </html>
 
