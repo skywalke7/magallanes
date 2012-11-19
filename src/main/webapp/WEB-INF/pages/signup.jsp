@@ -58,7 +58,7 @@
 			<label for="password">Password</label>
 			<form:password path="password"/>
 			<label for="confirmPassword">Confirm password</label>
-			<form:input path="confirmPassword" />
+			<form:password path="confirmPassword" />
 		</fieldset>
 		
 		<input type="submit" value="Sign up" />

@@ -40,6 +40,9 @@ public class SignUpController {
 				+ form.getFirstName());
 		logger.info("The value of the last name field is " + form.getLastName());
 		logger.info("The value of the email field is " + form.getEmail());
+		logger.info("The value of the password field is " + form.getPassword());
+		logger.info("The value of the confirm password is "
+				+ form.getConfirmPassword());
 
 		// Fix me Implement service ValidateUsuario
 
