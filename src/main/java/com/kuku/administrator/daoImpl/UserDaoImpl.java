@@ -23,4 +23,9 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao{
 		return null;
 	}
 
+	public void addUser() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

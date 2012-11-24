@@ -45,6 +45,7 @@
 				<list>
 					<value>com.kuku.administrator.model.User</value>
 					<value>com.kuku.administrator.model.Authority</value>
+					<value>com.kuku.administrator.model.UserInfo</value>
 				</list>
 			</property>
           	

@@ -32,7 +32,7 @@ public class KukuUserDetailsImpl implements UserDetails{
 		this.accountNonLocked = true;
 		this.accountNonExpired = true;
 		this.enabled = true;
-		
+		this.credentialsNonExpired = true;
 		
 	}
 	

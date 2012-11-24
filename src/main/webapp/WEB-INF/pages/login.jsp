@@ -185,6 +185,7 @@
                                         <input type="submit" value="LOG IN"/>
                                         
 				</form:form>
+				<a href="register">registro</a>
 			</div>
 		</div>
 	</body>

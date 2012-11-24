@@ -46,5 +46,7 @@
 		  </bean>
 		  <bean id="userDetails" class="com.kuku.administrator.authentication.KukuUserDetailsImpl">
 		  </bean>
+		  <bean id="userService" class="com.kuku.administrator.servicesImpl.UserServiceImpl">
+		  </bean>
           
 </beans>
