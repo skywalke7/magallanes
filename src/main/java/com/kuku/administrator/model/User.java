@@ -32,7 +32,6 @@ public class User implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "USERNAME")
 	private Set<Authority> authority = new HashSet<Authority>();
-<<<<<<< HEAD
 	@OneToOne
 	@JoinColumn(name="USERNAME")
 	private UserInfo userInfo;
@@ -44,9 +43,6 @@ public class User implements Serializable {
 	public void setUserInfo(UserInfo userInfo) {
 		this.userInfo = userInfo;
 	}
-=======
-
->>>>>>> Warnings supressed and all source code formatted
 	public Set<Authority> getAuthority() {
 		return authority;
 	}

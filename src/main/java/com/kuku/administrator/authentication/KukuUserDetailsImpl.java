@@ -36,19 +36,13 @@ public class KukuUserDetailsImpl implements UserDetails {
 
 		this.username = username;
 		this.password = password;
-		this.authorities = Collections
-				.unmodifiableSet(sortAuthorities(authorities));
+		this.authorities = Collections.unmodifiableSet(sortAuthorities(authorities));
 		this.accountNonExpired = true;
 		this.accountNonLocked = true;
 		this.accountNonExpired = true;
 		this.enabled = true;
-<<<<<<< HEAD
 		this.credentialsNonExpired = true;
-		
-=======
-
->>>>>>> Warnings supressed and all source code formatted
-	}
+	}	
 
 	private static SortedSet<GrantedAuthority> sortAuthorities(
 			Collection<? extends GrantedAuthority> authorities) {
