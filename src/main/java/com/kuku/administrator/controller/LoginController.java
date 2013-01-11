@@ -22,74 +22,53 @@ import com.kuku.administrator.services.UserService;
 @Controller
 public class LoginController {
 	
-	@Autowired
-	UserService userService;
-
 	protected final Log logger = LogFactory.getLog(getClass());
 
-	@RequestMapping(value = "/login", method = RequestMethod.GET)
-	public String authenticationFailed(Model model) {
-
-		model.addAttribute("loginForm", new LoginForm());
-
-		logger.error("Form reloaded because a failed authentication");
-
-		return "login";
-
-	}
-
+	/**
+	 * 	Method to redirect to login page
+	 * 
+	 *  @param model Anotation for setting the object to Form
+	 *  @param LoginForm Object linked to Form view
+	 *  @return A String that especifies the view to resolve
+	 *  
+	 * **/
+	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String showLogin(Model model) {
-
-		model.addAttribute("loginForm", new LoginForm());
-
-		logger.info("Login form getting loaded");
-
-		return "login";
+	public String showLogin(@ModelAttribute("loginForm") LoginForm loginForm,HttpServletRequest request) {
+		
+		System.out.println("PASA POR AQUI");
+		
+		return "init";
 
 	}
+	
+	/**
+	 * 	Method to validate the login form data
+	 * 
+	 *  @return A String that especifies the action to validate the data form
+	 *  
+	 * **/
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String validateLogin(@Valid LoginForm loginForm,
-			BindingResult result, HttpServletRequest request) {
+	public String validateLogin() {
 
-		if (result.hasErrors()) {
-			return "login";
-		}
-
-		logger.info("Submiting info for validation against the database");
 
 		return "forward:j_spring_security_check";
 
 	}
 	
+	/**
+	 * 	Method to redirect to the home page after a successful last logged
+	 * 
+	 *  @return A String that especifies the view to resolve
+	 *  
+	 * **/
+	
 	@RequestMapping(value="/home",method= RequestMethod.GET)
 	public String showHome(){
 		
-		System.out.println("DENTRO DE HOME");
-		
 		return "home";
 		
-	}
-	
-	@RequestMapping(value="/register",method= RequestMethod.GET)
-	public String showRegisterForm(Model model){
-		
-		model.addAttribute("registerForm", new UserForm());
-		
-		System.out.println("DENTRO DE REGISTER");
-		
-		return "register";
-		
-	}
-	
-	@RequestMapping(value="/register",method= RequestMethod.POST)
-	public String showRegisterForm(@ModelAttribute("userForm") UserForm userForm){
-		
-		userService.userRegister(userForm);
-		
-		return "redirect:/";
-		
-	}
+	}	
 		
 }

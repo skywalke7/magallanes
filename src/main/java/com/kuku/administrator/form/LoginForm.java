@@ -6,29 +6,10 @@ public class LoginForm implements Serializable {
 
 	private static final long serialVersionUID = -1564855946617773785L;
 
-	private String userName;
-
-	private String password;
 
 	private String j_username;
 
 	private String j_password;
-
-	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
-
-	public String getPassword() {
-		return password;
-	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
 
 	public String getJ_username() {
 		return j_username;

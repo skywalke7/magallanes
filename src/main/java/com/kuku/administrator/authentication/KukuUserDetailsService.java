@@ -19,12 +19,25 @@ import com.kuku.administrator.util.UtilAuthority;
 
 public class KukuUserDetailsService implements UserDetailsService {
 
+	
+	// injection DAOs and userDetails
+	
 	@Autowired
 	UserDao userDao;
 	@Autowired
 	UserDetails userDetails;
 
 	protected final Log logger = LogFactory.getLog(getClass());
+	
+	/**
+	 * 	Method to load the username and send it to userDao to check its existence 
+	 *  in the database, also prepares user roles into of the GrantedAuthority object.  
+	 * 
+	 *  @param A String username
+	 *  @return A object of type UserDetails with information of the user
+	 *  @return null if the user is not found in the database
+	 *  
+	 * **/
 
 	public UserDetails loadUserByUsername(String username)
 			throws UsernameNotFoundException, DataAccessException {
@@ -36,7 +49,6 @@ public class KukuUserDetailsService implements UserDetailsService {
 			List<GrantedAuthority> authorities = UtilAuthority
 					.getAuthorities(user);
 
-			logger.info("Before getting the user");
 
 			return new KukuUserDetailsImpl(user.getUserName(),
 					user.getPassword(), authorities);
