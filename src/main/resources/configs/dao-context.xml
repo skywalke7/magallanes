@@ -38,7 +38,11 @@
         		</property>
     	  </bean>
     	  
-    	  
+    	  <bean id="authenticationFailureHandler" class="com.kuku.administrator.authentication.KukuSimpleUrlAuthenticationFailureHandler">
+        	<property name="defaultFailureUrl" value="/?attempt_error=true"/>
+        	<property name="useForward" value="false" />
+    	  </bean>
+    	      	  
     	  <!-- injections -->
 		  
 		  <bean id="userDao" class="com.kuku.administrator.daoImpl.UserDaoImpl">

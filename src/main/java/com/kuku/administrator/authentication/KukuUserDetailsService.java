@@ -54,7 +54,8 @@ public class KukuUserDetailsService implements UserDetailsService {
 					user.getPassword(), authorities);
 
 		} else {
-			return null;
+			
+			return new KukuUserDetailsImpl();
 		}
 
 	}

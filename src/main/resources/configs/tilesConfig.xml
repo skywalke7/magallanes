@@ -4,14 +4,15 @@
 
 <tiles-definitions>
 
-	<definition name="publicTemplate" template="/WEB-INF/pages/template.jsp">
-		<put-attribute name="title"  value="Kuku Dev"/>
-		<put-attribute name="menu" value="/WEB-INF/pages/menu.jsp" />
-		<put-attribute name="header" value="/WEB-INF/pages/mainHeader.jsp" />
-		<put-attribute name="body" value="/WEB-INF/pages/mainBody.jsp" />
-		<put-attribute name="footer" value="/WEB-INF/pages/mainFooter.jsp" />
+	<definition name="publicTemplate" template="/WEB-INF/pages/tiles/template.jsp">
+		<put-attribute name="title"  value="Kuku dev"/>
+		<put-attribute name="viewProfile"  value="/WEB-INF/pages/tiles/anonymousUser.jsp"/>
 	</definition>
 
 	<definition name="init" extends="publicTemplate"></definition>
+	
+	<definition name="home" extends="publicTemplate">
+		<put-attribute name="viewProfile"  value="/WEB-INF/pages/userLoggedIn.jsp"/>
+	</definition>
 	
 </tiles-definitions>

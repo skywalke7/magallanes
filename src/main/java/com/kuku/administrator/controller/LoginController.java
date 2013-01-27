@@ -7,12 +7,17 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.annotations.Parameter;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.kuku.administrator.form.LoginForm;
@@ -36,7 +41,9 @@ public class LoginController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String showLogin(@ModelAttribute("loginForm") LoginForm loginForm,HttpServletRequest request) {
 		
-		System.out.println("PASA POR AQUI");
+		 
+		 System.out.println("PUTA MADRE" + SecurityContextHolder.getContext().getAuthentication().getAuthorities());
+
 		
 		return "init";
 
@@ -50,7 +57,12 @@ public class LoginController {
 	 * **/
 
 	@RequestMapping(value = "/", method = RequestMethod.POST)
-	public String validateLogin() {
+	public String validateLogin(@ModelAttribute("loginForm") @Valid LoginForm loginForm,BindingResult result,HttpServletRequest request) {
+		
+		if(result.hasErrors()){
+			
+			return showLogin(loginForm, request);
+		}
 
 
 		return "forward:j_spring_security_check";
@@ -65,10 +77,23 @@ public class LoginController {
 	 * **/
 	
 	@RequestMapping(value="/home",method= RequestMethod.GET)
-	public String showHome(){
+	 public String showHome(ModelMap model){
+	                               
+		 //System.out.println("---> " + SecurityContextHolder.getContext().getAuthentication().isAuthenticated());
+		 UserDetails user =  (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		 model.addAttribute("username",user.getUsername());
+		               
+		 return "home";
+	 }
+	
+	@RequestMapping(value="/attempt",method= RequestMethod.POST)
+	 public String hoder(ModelMap model,@ModelAttribute("loginForm") LoginForm loginForm){
+	                               
+		System.out.println("MIRA PUTA ARACELI DE MIERDA");
 		
-		return "home";
-		
-	}	
-		
+		model.addAttribute("error", "true");
+		 
+		 return "init";
+	 }
+			
 }
