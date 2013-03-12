@@ -35,6 +35,10 @@
 			</list>
 		</property>
 	</bean>
+	
+	<!-- support for multipart form -->
+	
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
 
 	<!-- import all configuration files -->
 

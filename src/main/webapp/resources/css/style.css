@@ -96,7 +96,7 @@ div#ProfileCard #UserOptions {
 }
 
 nav {
-	font-family: 'Aldrich', sans-serif;
+	font-family: 'Oswald','Aldrich', sans-serif;
 	position:relative;
 	margin:0px auto;
 	width:1000px;
@@ -104,7 +104,7 @@ nav {
 	/*border-radius:10px;
 	-webkit-border-radius:10px;
 	-moz-border-radius:10px;*/
-	background:url('../img/prueba.png') #8FC400;
+	background:url('../img/prueba.png') #36BCAB;
 	
 }
 
@@ -128,7 +128,7 @@ nav ul li a {
 
 a:hover{
 	
-	color:#D0FA58;
+	color:#81F7BE;
 
 }
 
@@ -144,7 +144,7 @@ a:hover{
 
 td, th {
 	
-	font-family: 'Electrolize', sans-serif;
+	font-family:'Electrolize', sans-serif;
 	text-align: left;
 	display: table-cell;
 	vertical-align: inherit;
@@ -173,7 +173,29 @@ td, th {
 #messageError{
 	
 	font-family: 'Electrolize', sans-serif;
-	color: #86B404;
+	color: #36BCAB;
 	font-size: 12px;
 	
+}
+
+/*section format*/
+
+section{
+	
+	background-color:red;
+	width:690px;
+	height:500px;
+	float:left;
+	margin: 15px;
+	
+}
+
+aside{
+	
+	background-color:blue;
+	width:250px;
+	height:700px;
+	float: right;
+	margin: 15px;
+		
 }

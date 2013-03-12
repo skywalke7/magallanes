@@ -42,7 +42,7 @@ public class LoginController {
 	public String showLogin(@ModelAttribute("loginForm") LoginForm loginForm,HttpServletRequest request) {
 		
 		 
-		 System.out.println("PUTA MADRE" + SecurityContextHolder.getContext().getAuthentication().getAuthorities());
+		 //SecurityContextHolder.getContext().getAuthentication().getAuthorities();
 
 		
 		return "init";
@@ -69,28 +69,17 @@ public class LoginController {
 
 	}
 	
+	
 	/**
-	 * 	Method to redirect to the home page after a successful last logged
+	 * 	Method for setting the error message when a user does not exist and failed authentication
 	 * 
 	 *  @return A String that especifies the view to resolve
 	 *  
 	 * **/
 	
-	@RequestMapping(value="/home",method= RequestMethod.GET)
-	 public String showHome(ModelMap model){
-	                               
-		 //System.out.println("---> " + SecurityContextHolder.getContext().getAuthentication().isAuthenticated());
-		 UserDetails user =  (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-		 model.addAttribute("username",user.getUsername());
-		               
-		 return "home";
-	 }
-	
 	@RequestMapping(value="/attempt",method= RequestMethod.POST)
 	 public String hoder(ModelMap model,@ModelAttribute("loginForm") LoginForm loginForm){
 	                               
-		System.out.println("MIRA PUTA ARACELI DE MIERDA");
-		
 		model.addAttribute("error", "true");
 		 
 		 return "init";

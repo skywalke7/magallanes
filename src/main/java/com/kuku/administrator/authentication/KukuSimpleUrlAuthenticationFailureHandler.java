@@ -39,7 +39,7 @@ public class KukuSimpleUrlAuthenticationFailureHandler extends SimpleUrlAuthenti
 
                 request.getRequestDispatcher(defaultFailureUrl).forward(request, response);
             } else {
-            	System.out.println("NO MAMES SI ENTRA AQUI HIJO DE LA GRANDISIMA PUTA SEA");
+            	
             	request.getRequestDispatcher("/attempt"). include(request, response);
             	
                 /*logger.debug("Redirecting to " + defaultFailureUrl);
