@@ -54,6 +54,7 @@ font-size:12px
 <body>
 	
 	<div id="page">
+		
 		<header>
 			<div id="MainBar">
 				<img id="logo" src="resources/img/logo.png" alt="Logo Kuku's software">
@@ -61,12 +62,15 @@ font-size:12px
 			</div>
 			<tiles:insertAttribute name="menu"/>
 		</header>
+		
 		<section>
-			<h1>Ultimas entradas</h1>
+			<h1 class="TitleLastUpdates">Ultimas entradas</h1>
 		</section>
+		
 		<aside>
-			Barra lateral / Sidebar
+			<h1 class="TitleRelatedPosts">Posts relacionados</h1>
 		</aside>
+	
 	</div>
 </body>
 </html>

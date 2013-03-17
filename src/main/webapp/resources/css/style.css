@@ -182,20 +182,40 @@ td, th {
 
 section{
 	
-	background-color:red;
 	width:690px;
-	height:500px;
+	height:800px;
 	float:left;
 	margin: 15px;
+	-webkit-box-shadow: 0 0 10px gray;
+	-mox-box-shadow: 0 0 10px gray;
+	box-shadow: 0 0 10px gray;
+	-webkit-border-radius: 10px;
+	-mox-border-radius: 10px;
+	border-radius: 10px;
 	
 }
 
 aside{
-	
-	background-color:blue;
+
 	width:250px;
-	height:700px;
+	height:800px;
 	float: right;
 	margin: 15px;
+	-webkit-box-shadow: 0 0 10px gray;
+	-mox-box-shadow: 0 0 10px gray;
+	box-shadow: 0 0 10px gray;
+	-webkit-border-radius: 10px;
+	-mox-border-radius: 10px;
+	border-radius: 10px;
 		
+}
+
+.TitleLastUpdates {
+	margin: 10px;
+	font-size: 2em;
+}
+
+.TitleRelatedPosts {
+	margin: 10px;
+	font-size: 1em;
 }
