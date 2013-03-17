@@ -16,7 +16,7 @@
     <link href='http://fonts.googleapis.com/css?family=Electrolize' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 </head>
-<script type="text/javascript" src="resources/js/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="resources/js/jquery.form.js"></script>
 <script type="text/javascript" >
  $(document).ready(function() { 
