@@ -35,8 +35,17 @@ public class User implements Serializable {
 	@OneToOne
 	@JoinColumn(name="USERNAME")
 	private UserInfo userInfo;
+	@OneToMany(mappedBy="username")
+	private Set<Post> post = new HashSet<Post>();
 	
 	
+	
+	public Set<Post> getPost() {
+		return post;
+	}
+	public void setPost(Set<Post> post) {
+		this.post = post;
+	}
 	public UserInfo getUserInfo() {
 		return userInfo;
 	}
