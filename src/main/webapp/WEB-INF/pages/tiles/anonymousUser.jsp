@@ -28,6 +28,15 @@
 					</td>
 					<td><input type="submit" id="submitBtnLogin" value="Entrar"></td>
 				</tr>
+				<tr>
+					<td>
+						<label>Recuerdame</label>
+						<input type="checkbox" />
+					</td>
+					<td>
+						<a href="#">Crear una cuenta</a>
+					</td>
+				</tr>
 			</tbody>
 		</table>
 	</form:form>
