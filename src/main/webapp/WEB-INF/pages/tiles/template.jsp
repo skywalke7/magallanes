@@ -19,6 +19,9 @@
 </head>
 
 <body>
+
+	<tiles:insertAttribute name="registerUser"/>
+
 	<div id="page">
 		
 		<header>
@@ -53,7 +56,8 @@
 			</ul>
 		
 		</aside>
-	
+		<a href="#openModal">Open Modal</a>
+
 	</div>
 	
 	<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>

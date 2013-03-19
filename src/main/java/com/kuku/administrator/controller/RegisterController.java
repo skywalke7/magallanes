@@ -28,6 +28,7 @@ public class RegisterController {
 	@RequestMapping(value="/register",method= RequestMethod.GET)
 	public String showRegisterForm(@ModelAttribute("registerForm") UserForm userForm){
 		
+		System.out.println("pasa por aqui");
 		return "register";
 		
 	}
