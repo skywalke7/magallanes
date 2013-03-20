@@ -26,9 +26,8 @@ public class RegisterController {
 	 * **/
 	
 	@RequestMapping(value="/register",method= RequestMethod.GET)
-	public String showRegisterForm(@ModelAttribute("registerForm") UserForm userForm){
+	public String showRegisterForm(@ModelAttribute("userForm") UserForm userForm){
 		
-		System.out.println("pasa por aqui");
 		return "register";
 		
 	}
@@ -45,7 +44,7 @@ public class RegisterController {
 	@RequestMapping(value="/register",method= RequestMethod.POST)
 	public String saveRegisterUser(@ModelAttribute("userForm") UserForm userForm){
 		
-		userService.userRegister(userForm);
+		System.out.println("puto nombre --> " + userForm.getName());
 		
 		return "redirect:/";
 		

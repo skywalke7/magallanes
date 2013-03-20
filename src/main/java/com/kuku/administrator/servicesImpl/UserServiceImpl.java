@@ -8,7 +8,7 @@ public class UserServiceImpl implements UserService {
 
 	public void userRegister(UserForm user) {
 		
-		System.out.println("NOMBREEEEEEEEEEEE" + user.getUsername());
+		
 		
 		// TODO Auto-generated method stub
 		

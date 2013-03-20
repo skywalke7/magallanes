@@ -4,9 +4,9 @@
 
 <tiles-definitions>
 
-	<definition name="registerTemplate" template="/WEB-INF/pages/tiles/template.jsp">
+	<definition name="registerTemplate" template="/WEB-INF/pages/tiles/registerTemplate.jsp">
 		<put-attribute name="title"  value="Kuku dev"/>
-		<put-attribute name="registerUser"  value="/WEB-INF/pages/registerForm.jsp"/>
+		
 	</definition>
 
 	<definition name="publicTemplate" template="/WEB-INF/pages/tiles/template.jsp">

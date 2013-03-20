@@ -1,23 +1,33 @@
 package com.kuku.administrator.form;
 
+
 public class UserForm {
 	
 	private String name;
 	private String lastName;
-	private String secondLastName;
-	private String address;
-	private String phone;
-	private String cellPhone;
-	private String city;
-	private String country;
-	private String username;
+	private String email;
 	private String password;
+	private String confirmPassowrd;
+	private String birthDay;
+	private char sex;
 	
-	public String getUsername() {
-		return username;
+	public String getName() {
+		return name;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public String getPassword() {
 		return password;
@@ -25,45 +35,24 @@ public class UserForm {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	
-	/*private String passwordSecurity;
-	private String Address;
-	private String cellPhone;
-	
-	
-	public String getUsername() {
-		return username;
+	public String getConfirmPassowrd() {
+		return confirmPassowrd;
 	}
-	public void setUsername(String username) {
-		this.username = username;
+	public void setConfirmPassowrd(String confirmPassowrd) {
+		this.confirmPassowrd = confirmPassowrd;
 	}
-	public String getPassword() {
-		return password;
+	public String getBirthDay() {
+		return birthDay;
 	}
-	public void setPassword(String password) {
-		this.password = password;
+	public void setBirthDay(String birthDay) {
+		this.birthDay = birthDay;
 	}
-	public String getPasswordSecurity() {
-		return passwordSecurity;
+	public char getSex() {
+		return sex;
 	}
-	public void setPasswordSecurity(String passwordSecurity) {
-		this.passwordSecurity = passwordSecurity;
+	public void setSex(char sex) {
+		this.sex = sex;
 	}
-	public String getAddress() {
-		return Address;
-	}
-	public void setAddress(String address) {
-		Address = address;
-	}
-	public String getCellPhone() {
-		return cellPhone;
-	}
-	public void setCellPhone(String cellPhone) {
-		this.cellPhone = cellPhone;
-	}
-	*/
-	
 	
 	
 

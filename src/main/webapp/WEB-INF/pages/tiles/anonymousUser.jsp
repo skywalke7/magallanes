@@ -34,7 +34,7 @@
 						<input type="checkbox" />
 					</td>
 					<td>
-						<a href="#">Crear una cuenta</a>
+						<a href="<%=request.getContextPath()%>/register">Crear una cuenta</a>
 					</td>
 				</tr>
 			</tbody>

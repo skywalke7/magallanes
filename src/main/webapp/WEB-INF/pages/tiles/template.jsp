@@ -20,7 +20,7 @@
 
 <body>
 
-	<tiles:insertAttribute name="registerUser"/>
+	
 
 	<div id="page">
 		
