@@ -1,15 +1,27 @@
 package com.kuku.administrator.form;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 
 public class UserForm {
 	
+	@NotEmpty
 	private String name;
+	@NotEmpty
 	private String lastName;
+	@NotEmpty
 	private String email;
+	@NotEmpty
 	private String password;
+	@NotEmpty
 	private String confirmPassowrd;
+	@NotEmpty
 	private String birthDay;
-	private char sex;
+	@NotEmpty
+	private String sex;
 	
 	public String getName() {
 		return name;
@@ -47,10 +59,10 @@ public class UserForm {
 	public void setBirthDay(String birthDay) {
 		this.birthDay = birthDay;
 	}
-	public char getSex() {
+	public String getSex() {
 		return sex;
 	}
-	public void setSex(char sex) {
+	public void setSex(String sex) {
 		this.sex = sex;
 	}
 	

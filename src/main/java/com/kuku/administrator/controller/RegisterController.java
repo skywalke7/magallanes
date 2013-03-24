@@ -1,7 +1,11 @@
 package com.kuku.administrator.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,7 +30,8 @@ public class RegisterController {
 	 * **/
 	
 	@RequestMapping(value="/register",method= RequestMethod.GET)
-	public String showRegisterForm(@ModelAttribute("userForm") UserForm userForm){
+	public String showRegisterForm(@ModelAttribute("userForm") UserForm userForm,HttpServletRequest request){
+		
 		
 		return "register";
 		
@@ -42,9 +47,13 @@ public class RegisterController {
 	 * **/
 	
 	@RequestMapping(value="/register",method= RequestMethod.POST)
-	public String saveRegisterUser(@ModelAttribute("userForm") UserForm userForm){
+	public String saveRegisterUser(@ModelAttribute("userForm") @Valid UserForm userForm,BindingResult result,HttpServletRequest request){
 		
-		System.out.println("puto nombre --> " + userForm.getName());
+		if(result.hasErrors()){
+			System.out.println("que pedo si entra");
+			return showRegisterForm(userForm, request);
+			
+		}
 		
 		return "redirect:/";
 		

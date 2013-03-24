@@ -16,36 +16,9 @@
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
   	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   	<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
-  	<script type="text/javascript">
-  	$(function () {
-        $("#datepicker").datepicker({
-            constrainInput: true,
-            showOn: 'button',
-            buttonImage: 'resources/img/ico_calendar.gif',
-            buttonImageOnly: true
-        });
-    });
-	  	jQuery(function($){
-	  	   $.datepicker.regional['es'] = {
-	  	      closeText: 'Cerrar',
-	  	      prevText: '<Ant',
-	  	      nextText: 'Sig>',
-	  	      currentText: 'Hoy',
-	  	      monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-	  	      monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
-	  	      dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-	  	      dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
-	  	      dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
-	  	      weekHeader: 'Sm',
-	  	      dateFormat: 'dd/mm/yy',
-	  	      firstDay: 1,
-	  	      isRTL: false,
-	  	      showMonthAfterYear: false,
-	  	      yearSuffix: ''};
-	  	   $.datepicker.setDefaults($.datepicker.regional['es']);
-	  	});
-	  	
-  	</script>
+  	<script src="resources/js/jquery.form.js"></script>
+  	<script src="resources/js/datePicker.js"></script>
+  	<script src="resources/js/messageError.js"></script>
 </head>
 
 <body>
@@ -56,7 +29,7 @@
   	
   	<div class="form-register">
     	<form:form action="#" method="post" modelAttribute="userForm">
-  
+			<form:errors path="*"><div class="message error mensajes">Todos los campos son obligatorios</div></form:errors>
   			<div class="cmp">
 		        <form:input id="user_name" type="text" placeholder="Nombre" class="text_field" path="name" />
 		    </div>

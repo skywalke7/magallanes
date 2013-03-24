@@ -62,6 +62,7 @@ public class LoginController {
 		if(result.hasErrors()){
 			
 			return showLogin(loginForm, request);
+			
 		}
 
 
