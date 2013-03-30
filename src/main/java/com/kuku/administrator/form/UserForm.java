@@ -1,17 +1,26 @@
 package com.kuku.administrator.form;
 
+import java.lang.annotation.Annotation;
+
+import javax.validation.Payload;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 
-import org.hibernate.validator.constraints.NotEmpty;
+import org.hibernate.annotations.MetaValue;
+import org.hibernate.validator.constraints.Email;
+
+import com.kuku.administrator.util.NotEmpty;
+import static com.kuku.administrator.util.Constants.EMAIL;
 
 
-public class UserForm {
+
+public class UserForm{
 	
 	@NotEmpty
 	private String name;
 	@NotEmpty
 	private String lastName;
+	@Email(message=EMAIL)
 	@NotEmpty
 	private String email;
 	@NotEmpty
@@ -65,7 +74,6 @@ public class UserForm {
 	public void setSex(String sex) {
 		this.sex = sex;
 	}
-	
-	
 
+	
 }

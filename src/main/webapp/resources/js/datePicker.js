@@ -1,9 +1,16 @@
 $(function () {
+	
+		var date = new Date();
+	    var currentMonth = date.getMonth();
+	    var currentDate = date.getDate();
+	    var currentYear = date.getFullYear();
+	
         $("#datepicker").datepicker({
             constrainInput: true,
             showOn: 'button',
             buttonImage: 'resources/img/ico_calendar.gif',
-            buttonImageOnly: true
+            buttonImageOnly: true,
+            maxDate: new Date(currentYear, currentMonth, currentDate)
         });
     });
 
@@ -21,6 +28,7 @@ jQuery(function($){
 	  	      weekHeader: 'Sm',
 	  	      dateFormat: 'dd/mm/yy',
 	  	      firstDay: 1,
+	  	      //minDate:new Date(d.setDate(d.getDate() + 1)),
 	  	      isRTL: false,
 	  	      showMonthAfterYear: false,
 	  	      yearSuffix: ''};

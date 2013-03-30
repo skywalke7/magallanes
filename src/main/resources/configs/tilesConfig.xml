@@ -15,7 +15,8 @@
 		<put-attribute name="menu"  value="/WEB-INF/pages/tiles/menu.jsp"/>
 	</definition>
 
-	<definition name="init" extends="publicTemplate"></definition>
+	<definition name="init" extends="publicTemplate">
+	</definition>
 	
 	<definition name="home" extends="publicTemplate">
 		<put-attribute name="viewProfile"  value="/WEB-INF/pages/userLoggedIn.jsp"/>

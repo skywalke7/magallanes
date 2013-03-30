@@ -31,7 +31,7 @@ public class KukuSimpleUrlAuthenticationFailureHandler extends SimpleUrlAuthenti
 
         if (defaultFailureUrl == null) {
             logger.debug("No failure URL set, sending 401 Unauthorized error");
-
+            System.out.println("emtra por aquiiiiiiiiiiiiiii 1111");
             response.sendError(HttpServletResponse.SC_UNAUTHORIZED, "Authentication Failed: " + exception.getMessage());
         } else {
             if (forwardToDestination) {
@@ -39,7 +39,7 @@ public class KukuSimpleUrlAuthenticationFailureHandler extends SimpleUrlAuthenti
 
                 request.getRequestDispatcher(defaultFailureUrl).forward(request, response);
             } else {
-            	
+            	System.out.println("entra por aqui 222222222");
             	request.getRequestDispatcher("/attempt"). include(request, response);
             	
                 /*logger.debug("Redirecting to " + defaultFailureUrl);

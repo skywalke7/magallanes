@@ -13,6 +13,7 @@
 	<title><tiles:insertAttribute name="title"/></title>
 	<link rel="stylesheet" type="text/css" href="resources/css/style.css" />
 	<link href='http://fonts.googleapis.com/css?family=Krona+One' rel='stylesheet' type='text/css'>	
+	<link href='http://fonts.googleapis.com/css?family=Istok+Web:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
   	<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   	<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
@@ -27,9 +28,18 @@
 	
   	</div>
   	
-  	<div class="form-register">
-    	<form:form action="#" method="post" modelAttribute="userForm">
-			<form:errors path="*"><div class="message error mensajes">Todos los campos son obligatorios</div></form:errors>
+  	<div class="form-register"> 
+    	<form:form modelAttribute="userForm" id="formRegister">
+    		<div class="cmp">
+    			<h1>Únete a KukuDev.</h1>
+    		</div>
+    		<c:if test="${not empty gender}">
+		    		<script>checkRadio('${gender}');</script>
+		    </c:if>
+		    <c:if test="${not empty error}">
+		    		<div class="message_error"></div>
+		    		<script>validateFields(${error});</script>
+		    </c:if>
   			<div class="cmp">
 		        <form:input id="user_name" type="text" placeholder="Nombre" class="text_field" path="name" />
 		    </div>
@@ -51,18 +61,18 @@
 		    <div class="cmp">
 	  			<form:input type = "radio"
 	                 name = "sex"
-	                 id = "male"
+	                 id = "sex"
 	                 value = "1" path="sex"/>
 	          	<label class="gender" for = "sizeSmall">Hombre</label>
           
           		<form:input type = "radio"
 	                 name = "sex"
-	                 id = "female"
+	                 id = "sex"
 	                 value = "2" path="sex"/>
 	          	<label class="gender" for = "sizeMed">Mujer</label>
 	        </div>
   			<div class="cmp_button">
-  				<button class="button primary button-block" type="submit">Regístrate</button>
+  				<button class="button primary button-block" >Regístrate</button>
   			</div>
 		</form:form>
 	</div>
