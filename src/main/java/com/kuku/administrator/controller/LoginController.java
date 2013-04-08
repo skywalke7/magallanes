@@ -1,5 +1,7 @@
 package com.kuku.administrator.controller;
 
+import static com.kuku.administrator.util.Constants.EMAIL;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
@@ -23,6 +25,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.kuku.administrator.form.LoginForm;
 import com.kuku.administrator.form.UserForm;
 import com.kuku.administrator.services.UserService;
+import com.kuku.administrator.util.Constants;
 
 @Controller
 public class LoginController {
@@ -41,7 +44,6 @@ public class LoginController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String showLogin(@ModelAttribute("loginForm") LoginForm loginForm,HttpServletRequest request) {
 		
-		 
 		 //SecurityContextHolder.getContext().getAuthentication().getAuthorities();
 
 		
@@ -65,7 +67,7 @@ public class LoginController {
 			
 		}
 
-
+		
 		return "forward:j_spring_security_check";
 
 	}
@@ -79,11 +81,47 @@ public class LoginController {
 	 * **/
 	
 	@RequestMapping(value="/attempt",method= RequestMethod.POST)
-	 public String hoder(ModelMap model,@ModelAttribute("loginForm") LoginForm loginForm){
+	 public String hoder(ModelMap model,@ModelAttribute("loginForm") LoginForm loginForm,HttpServletRequest request){
 	                               
 		model.addAttribute("error", "true");
-		 
-		 return "init";
+		
+		return "init";
 	 }
+		
+	/*@RequestMapping(value="login",method= RequestMethod.POST)
+	 public String showModalLogin(@RequestParam("j_username") String userName,@RequestParam("j_password") String password){
+	    
+		System.out.println("si entra");
+		
+		if(userName.isEmpty()){
+		
+			System.out.println("falla usuario");
+			return Constants.FAIL;
+			
+		}else if(password.isEmpty()){
+			
+			System.out.println("falla pass");
+			return Constants.FAIL;
+			
+		}else{
+		
+			return "forward:j_spring_security_check?j_username="+userName.trim()+"&j_password="+password.trim()+"";
+			
+		}
+	
+	 }*/
+	
+	/*
+	 
+	 @RequestMapping(value="modal/login",method= RequestMethod.GET)
+	 public String showModalLogin(@ModelAttribute("loginForm") LoginForm loginForm,HttpServletRequest request){
+	    
+		System.out.println("si entra que mierda");
+		
+		return "init";
+	
+	 }
+	 
+	  */
 			
 }

@@ -17,6 +17,7 @@ public class UtilAuthority {
 		List<GrantedAuthority> listAuthorities = new ArrayList<GrantedAuthority>();
 		Set<Authority> authorities = user.getAuthority();
 		System.out.println("NOMBRE --> " + user.getUserInfo().getName());
+		System.out.println("AUTHORITIES --> " + user.getAuthority().size());
 		for (Authority ua : authorities){
 			System.out.println(ua.getAuthority());
 			listAuthorities.add(new GrantedAuthorityImpl(ua.getAuthority()));

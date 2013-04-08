@@ -12,6 +12,9 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title><tiles:insertAttribute name="title"/></title>
 	<link rel="stylesheet" type="text/css" href="resources/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="resources/css/style_modal.css" />
+	<link rel="stylesheet" type="text/css" href="resources/css/normalize.css">
+	<link rel="stylesheet" type="text/css" href="resources/css/style_form.css">
 	<link href='http://fonts.googleapis.com/css?family=Krona+One' rel='stylesheet' type='text/css'>	
 	<link href='http://fonts.googleapis.com/css?family=Istok+Web:700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
@@ -19,13 +22,17 @@
   	<script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
   	<script src="resources/js/jquery.form.js"></script>
   	<script src="resources/js/datePicker.js"></script>
+  	<script src="resources/js/function_modal.js"></script>
   	<script src="resources/js/messageError.js"></script>
 </head>
 
 <body>
 
 	<div class="jumbotron">
-	
+		<div class="login">
+			<img src="<%=request.getContextPath()%>/resources/img/1364639596_home.png" alt="icon for login" class="icon_home">
+			<span class="link_login" data-type="zoomin">¿Tienes una cuenta?</span>
+		</div>
   	</div>
   	
   	<div class="form-register"> 
@@ -71,11 +78,12 @@
 	                 value = "2" path="sex"/>
 	          	<label class="gender" for = "sizeMed">Mujer</label>
 	        </div>
+	        <p class="privacy_policy">Al hacer clic en "Regístrate" a continuación, usted está de acuerdo con los <a href="" class="spp">Servicios y la Políticas de Privacidad </a>.</p>
   			<div class="cmp_button">
   				<button class="button primary button-block" >Regístrate</button>
   			</div>
 		</form:form>
 	</div>
-	
+	<tiles:insertAttribute name="modal"/>	
 </body>
 </html>

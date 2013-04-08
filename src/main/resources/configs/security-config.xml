@@ -17,7 +17,6 @@
 		<intercept-url pattern="/resources/**" filters="none" />
 		<intercept-url pattern="/register" filters="none" />
 		<intercept-url pattern="/home" access="ROLE_USER" />
-		<intercept-url pattern="/AddUser.htm" access="ROLE_ANONYMOUS" />
 		
 		<anonymous enabled="true"/>
 		<access-denied-handler error-page="/home"/>

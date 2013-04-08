@@ -4,14 +4,23 @@ $(function () {
 	    var currentMonth = date.getMonth();
 	    var currentDate = date.getDate();
 	    var currentYear = date.getFullYear();
-	
+	    
         $("#datepicker").datepicker({
             constrainInput: true,
             showOn: 'button',
-            buttonImage: 'resources/img/ico_calendar.gif',
+            buttonImage: 'resources/img/1365307961_calendar_sticker.png',
             buttonImageOnly: true,
-            maxDate: new Date(currentYear, currentMonth, currentDate)
+            maxDate: new Date(currentYear, currentMonth, currentDate),
+        	buttonText: "calendario"
+        		
         });
+        
+        $("img[src$='1365307961_calendar_sticker.png']").height(50);
+        
+        $("img[src$='1365307961_calendar_sticker.png']").mouseover(function() {
+            $(this).css('cursor','pointer');
+        });
+        
     });
 
 jQuery(function($){

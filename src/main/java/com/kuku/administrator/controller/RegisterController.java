@@ -52,36 +52,16 @@ public class RegisterController {
 	 *  
 	 * **/
 	
-	/*@RequestMapping(value="/register",method= RequestMethod.POST)
-	public @ResponseBody String saveRegisterUser(ModelMap model,@ModelAttribute("userForm") @Valid UserForm userForm,BindingResult result,HttpServletRequest request){
-		
-		System.out.println("si entre que peso");
-		
-		if(result.hasErrors()){
-						
-			System.out.println("con errores shit");
-			return "error";
-			
-		}else{
-			System.out.println("sin pedos joder");
-			return "success";
-			
-		}
-		
-		//return "redirect:/";
-		
-	}*/
-	
 	@RequestMapping(value="/register",method=RequestMethod.POST)
     public String addUser(ModelMap model,@ModelAttribute("userForm") @Valid UserForm userForm,BindingResult result,HttpServletRequest request){
-		
-		if(userForm.getSex() != null && !userForm.getSex().isEmpty()){
-        	
-        	model.addAttribute("gender", userForm.getSex());
-        	
-        }
-		
+				
         if(result.hasErrors()){
+        	
+        	if(userForm.getSex() != null && !userForm.getSex().isEmpty()){
+            	
+            	model.addAttribute("gender", userForm.getSex());
+            	
+            }
         	
         	model.addAttribute("error", result.getFieldError().getDefaultMessage().equals(EMAIL)?true:false);
         	return showRegisterForm(userForm, request);
