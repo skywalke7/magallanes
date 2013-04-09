@@ -9,7 +9,10 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.annotations.MetaValue;
 import org.hibernate.validator.constraints.Email;
 
+import com.kuku.administrator.util.Constants;
 import com.kuku.administrator.util.NotEmpty;
+import com.kuku.administrator.util.Util;
+
 import static com.kuku.administrator.util.Constants.EMAIL;
 
 
@@ -36,13 +39,13 @@ public class UserForm{
 		return name;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this.name = Util.encodeString(name);
 	}
 	public String getLastName() {
 		return lastName;
 	}
 	public void setLastName(String lastName) {
-		this.lastName = lastName;
+		this.lastName = Util.encodeString(lastName);
 	}
 	public String getEmail() {
 		return email;

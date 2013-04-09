@@ -9,7 +9,7 @@
 <html lang="en">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<title><tiles:insertAttribute name="title"/></title>
 	<link rel="stylesheet" type="text/css" href="resources/css/style.css" />
 	<link rel="stylesheet" type="text/css" href="resources/css/style_modal.css" />
@@ -31,12 +31,12 @@
 	<div class="jumbotron">
 		<div class="login">
 			<img src="<%=request.getContextPath()%>/resources/img/1364639596_home.png" alt="icon for login" class="icon_home">
-			<span class="link_login" data-type="zoomin">¿Tienes una cuenta?</span>
+			<span class="link_login" data-type="zoomin">¿Tienes una cuenta? <b>¡Entra ya!</b></span>
 		</div>
   	</div>
   	
   	<div class="form-register"> 
-    	<form:form modelAttribute="userForm" id="formRegister">
+    	<form:form modelAttribute="userForm" id="formRegister" accept-charset="UTF-8">
     		<div class="cmp">
     			<h1>Únete a KukuDev.</h1>
     		</div>

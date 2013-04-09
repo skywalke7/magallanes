@@ -11,6 +11,8 @@ $(function () {
             buttonImage: 'resources/img/1365307961_calendar_sticker.png',
             buttonImageOnly: true,
             maxDate: new Date(currentYear, currentMonth, currentDate),
+            yearRange: "-40:+0",
+            changeYear: true,
         	buttonText: "calendario"
         		
         });

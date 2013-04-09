@@ -6,7 +6,7 @@
 			Tu usuario o contrase&ntilde;a son incorrectos
 		</c:if>
 	</div>
-	<form:form id="loginUser" modelAttribute="loginForm"  method="post" autocomplete="off">
+	<form:form id="loginUser" modelAttribute="loginForm"  method="post" autocomplete="off" accept-charset="utf-8">
 		<table border="0">
 			<tbody>
 				<tr>	

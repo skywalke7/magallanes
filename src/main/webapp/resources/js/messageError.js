@@ -34,6 +34,12 @@ function validateFields(status){
 			$("#user_email").css('background-color','#F6CECE');
 			
 			
+		}else if((password != "" && confirmPassword != "") && (password != confirmPassword)){
+			
+			$(".message_error").addClass("msgbox error icon");
+			$(".message_error").html("Los contraseñas no coinciden");
+			$("#user_password_confirm").focus();
+		
 		}else{
 			
 			$(".message_error").addClass("msgbox error icon");

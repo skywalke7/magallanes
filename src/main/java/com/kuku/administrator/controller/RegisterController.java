@@ -1,5 +1,7 @@
 package com.kuku.administrator.controller;
 
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,11 +51,12 @@ public class RegisterController {
 	 *  @param model Anotation for setting the object to Form
 	 *  @param LoginForm Object@RequestMapping(value="/register",method= RequestMethod.POST)
 	 *  @return A String that especifies the view to resolve
+	 * 	@throws UnsupportedEncodingException 
 	 *  
 	 * **/
 	
 	@RequestMapping(value="/register",method=RequestMethod.POST)
-    public String addUser(ModelMap model,@ModelAttribute("userForm") @Valid UserForm userForm,BindingResult result,HttpServletRequest request){
+    public String addUser(ModelMap model,@ModelAttribute("userForm") @Valid UserForm userForm,BindingResult result,HttpServletRequest request) throws UnsupportedEncodingException{
 				
         if(result.hasErrors()){
         	
@@ -64,6 +67,7 @@ public class RegisterController {
             }
         	
         	model.addAttribute("error", result.getFieldError().getDefaultMessage().equals(EMAIL)?true:false);
+      
         	return showRegisterForm(userForm, request);
         	
         }

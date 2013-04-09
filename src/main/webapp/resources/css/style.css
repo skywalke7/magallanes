@@ -388,7 +388,7 @@ input[type=text].text_field,input[type=password].text_field{
   border-radius: 5px;
   width: 370px;
   height: 32px;
-  
+   
 }
  
 input[type=password]:focus,input[type=text]:focus{
@@ -500,21 +500,23 @@ h1 {
 
 .icon_home{
 	
-	vertical-align: middle
+	vertical-align: middle;
+	height: 25px;
 	
 }
 
 .link_login{
 	
 	margin-left: 3px;	
-	color: white;
-	font-weight: bold;
+	color: #E6E4E4;
 	position:relative;
-	top: 10px;
+	top: 5px;
 	font-size: 14px;
 	cursor:pointer;
 	
 }
+
+.link_login:hover{ color: white; }
 
 p.privacy_policy{
 
