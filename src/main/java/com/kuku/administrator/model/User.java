@@ -32,7 +32,7 @@ public class User implements Serializable {
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "USERNAME")
 	private Set<Authority> authority = new HashSet<Authority>();
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name="USERNAME")
 	private UserInfo userInfo;
 	@OneToMany(mappedBy="username")

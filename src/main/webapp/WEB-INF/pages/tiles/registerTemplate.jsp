@@ -43,9 +43,18 @@
     		<c:if test="${not empty gender}">
 		    		<script>checkRadio('${gender}');</script>
 		    </c:if>
-		    <c:if test="${not empty error}">
+		    <!--<c:choose>
+		    	<c:when test="${not empty error && not empty message}">
 		    		<div class="message_error"></div>
-		    		<script>validateFields(${error});</script>
+		    		<script>validateFields(${error},'${message}');</script>
+		    	</c:when>
+		    	<c:otherwise>
+		    		<script>validatePassword();</script>
+		    	</c:otherwise>
+		    </c:choose>-->
+		    <c:if test="${not empty error && not empty message}">
+		    		<div class="message_error"></div>
+		    		<script>validateFields(${error},'${message}','${field}');</script>
 		    </c:if>
   			<div class="cmp">
 		        <form:input id="user_name" type="text" placeholder="Nombre" class="text_field" path="name" />

@@ -7,6 +7,8 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.security.authentication.encoding.PasswordEncoder;
+import org.springframework.security.authentication.encoding.ShaPasswordEncoder;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -29,6 +31,8 @@ public class KukuUserDetailsService implements UserDetailsService {
 
 	protected final Log logger = LogFactory.getLog(getClass());
 	
+	//PasswordEncoder passwordEncoder = new ShaPasswordEncoder(512);
+	
 	/**
 	 * 	Method to load the username and send it to userDao to check its existence 
 	 *  in the database, also prepares user roles into of the GrantedAuthority object.  
@@ -43,8 +47,11 @@ public class KukuUserDetailsService implements UserDetailsService {
 			throws UsernameNotFoundException, DataAccessException {
 
 		User user = this.userDao.findByUserName(username);
-
+		
 		if (user != null) {
+			
+		/*String encodePassword = passwordEncoder.encodePassword(user.getPassword(), user.getUserName());
+		System.out.println("password --> " + encodePassword);*/
 
 			List<GrantedAuthority> authorities = UtilAuthority
 					.getAuthorities(user);

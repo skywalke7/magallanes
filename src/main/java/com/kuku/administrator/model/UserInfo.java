@@ -23,7 +23,7 @@ public class UserInfo implements Serializable{
 	@Column(name="BIRTHDAY")
 	private Date birthDay;
 	@Column(name="SEX")
-	private char sex;
+	private int sex;
 	
 
 	public String getUserName() {
@@ -50,10 +50,10 @@ public class UserInfo implements Serializable{
 	public void setBirthDay(Date birthDay) {
 		this.birthDay = birthDay;
 	}
-	public char getSex() {
+	public int getSex() {
 		return sex;
 	}
-	public void setSex(char sex) {
+	public void setSex(int sex) {
 		this.sex = sex;
 	}
 

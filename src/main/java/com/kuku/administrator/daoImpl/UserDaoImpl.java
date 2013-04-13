@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 
 import com.kuku.administrator.dao.UserDao;
+import com.kuku.administrator.form.UserForm;
 import com.kuku.administrator.model.User;
 
 public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
@@ -23,8 +24,10 @@ public class UserDaoImpl extends HibernateDaoSupport implements UserDao {
 		}
 	}
 
-	public void addUser() {
-		// TODO Auto-generated method stub
+	public void addUser(User user) {
+
+		getHibernateTemplate().save(user);
+		
 		
 	}
 

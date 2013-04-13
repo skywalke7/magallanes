@@ -470,7 +470,7 @@ input[type=text].text_field_calendar{ width: 315px; }
 }*/
 
 
-.msgbox{font:14px Verdana,Arial,sans-serif; margin: auto auto 20px; padding:5px; text-align: center; width: 310px;}
+.msgbox{font:14px Verdana,Arial,sans-serif; margin: auto auto 20px; padding:5px; text-align: center; width: 380px;}
 .error   { background-color:#FCC; border:solid 1px #C33; color:#C33; }
 .icon {background-position: 7px 5px; background-repeat:no-repeat; }
 .error.icon {background-image:url("../img/error_icon.png");}

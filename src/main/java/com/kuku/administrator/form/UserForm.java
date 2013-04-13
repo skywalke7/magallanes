@@ -23,7 +23,7 @@ public class UserForm{
 	private String name;
 	@NotEmpty
 	private String lastName;
-	@Email(message=EMAIL)
+	@Email
 	@NotEmpty
 	private String email;
 	@NotEmpty
