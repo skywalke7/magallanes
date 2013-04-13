@@ -45,7 +45,7 @@ public class RegisterController {
 	@RequestMapping(value="/register",method= RequestMethod.GET)
 	public String showRegisterForm(@ModelAttribute("userForm") UserForm userForm,HttpServletRequest request){
 		
-		
+	
 		return "register";
 		
 	}
@@ -64,13 +64,7 @@ public class RegisterController {
 	
 	@RequestMapping(value="/register",method=RequestMethod.POST)
     public String addUser(ModelMap model,@ModelAttribute("userForm") @Valid UserForm userForm,BindingResult result,HttpServletRequest request){
-		
-		if(userForm.getSex() != null && !userForm.getSex().isEmpty()){
-        	
-        	model.addAttribute("gender", userForm.getSex());
-        	
-        }
-		
+			
         if(result.hasErrors()){
         	        	
         	model.addAttribute("error",false);
@@ -99,8 +93,9 @@ public class RegisterController {
         	
 		} catch (EmailException e) {
 			
-			model.addAttribute("error", true);
+			model.addAttribute("error", false);
         	model.addAttribute("message", e.getMessage());
+        	model.addAttribute("field", Constants.EMAIL_FIELD);
         	return showRegisterForm(userForm, request);
         	
 		}

@@ -32,7 +32,6 @@ public class UserServiceImpl implements UserService {
 
 	public void userRegister(UserForm user) throws UserException,PasswordException,EmailException{
 		
-		System.out.println("puto emaiiiiiiiiiiiiil --> " + Util.validateEmail(user.getEmail()));
 		if(!Util.validateEmail(user.getEmail())){
 			throw new EmailException(Constants.INVALID_EMAIL);
 		}

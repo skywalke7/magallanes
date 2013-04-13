@@ -1,5 +1,6 @@
 function validateFields(status, message,field){
 
+	alert("cojones --> " + status);
 	$(function () {
 									
 		var name =$.trim($("#user_name").val());
@@ -32,8 +33,8 @@ function validateFields(status, message,field){
 }
 
 function checkRadio(value){
-	
-	$(function () {
+		
+	$(function () { 
 		$(":radio[name='sex'][value='"+value+"']").attr('checked', true);
 	});
 	
@@ -80,14 +81,14 @@ function showError(status,message,field){
 		$(".message_error").addClass("msgbox error icon");
 		$(".message_error").html(message);
 		
-	}else{
+	}/*else{
 		
 		$(".message_error").addClass("msgbox error icon");
 		$(".message_error").html(message);
 		$("#user_email").focus();
 		$("#user_email").css('background-color','#F6CECE');
 		
-	}
+	}*/
 	
 	
 }

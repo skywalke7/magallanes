@@ -40,18 +40,10 @@
     		<div class="cmp">
     			<h1>Únete a KukuDev.</h1>
     		</div>
-    		<c:if test="${not empty gender}">
-		    		<script>checkRadio('${gender}');</script>
-		    </c:if>
-		    <!--<c:choose>
-		    	<c:when test="${not empty error && not empty message}">
-		    		<div class="message_error"></div>
-		    		<script>validateFields(${error},'${message}');</script>
-		    	</c:when>
-		    	<c:otherwise>
-		    		<script>validatePassword();</script>
-		    	</c:otherwise>
-		    </c:choose>-->
+    		<script>var value = "<%=request.getParameter("sex")%>";
+    			if(value != null && value != "")
+    				checkRadio(value);
+    		</script>
 		    <c:if test="${not empty error && not empty message}">
 		    		<div class="message_error"></div>
 		    		<script>validateFields(${error},'${message}','${field}');</script>
